@@ -1,0 +1,102 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.team.courseselector.WeightActivity">
+
+    <include
+        android:id="@+id/tb_appbar"
+        layout="@layout/toolbar"
+        />
+    <RelativeLayout
+        android:layout_below="@+id/tb_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:paddingBottom="@dimen/activity_vertical_margin">
+
+    <TextView android:text="Diffculty" android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="101dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:id="@+id/tv1" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Teacher"
+        android:id="@+id/tv2"
+        android:layout_below="@+id/tv1"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv1"
+        android:text="Please put weights"
+        android:id="@+id/tv0"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Exam"
+        android:id="@+id/tv3"
+        android:layout_below="@+id/tv2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="40dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Usability"
+        android:id="@+id/tv4"
+        android:layout_marginTop="40dp"
+        android:layout_below="@+id/tv3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar6"
+        android:layout_alignTop="@+id/tv1"
+        android:layout_alignLeft="@+id/tv0"
+        android:layout_alignStart="@+id/tv0"
+        android:indeterminate="false" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar7"
+        android:layout_alignTop="@+id/tv2"
+        android:layout_alignLeft="@+id/tv0"
+        android:layout_alignStart="@+id/seekBar6" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar8"
+        android:layout_alignTop="@+id/tv3"
+        android:layout_alignLeft="@+id/seekBar7"
+        android:layout_alignStart="@+id/seekBar7" />
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/seekBar9"
+        android:layout_alignTop="@+id/tv4"
+        android:layout_alignLeft="@+id/seekBar8"
+        android:layout_alignStart="@+id/seekBar8" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

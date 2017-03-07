@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.team.courseselector" >
+
+    <uses-permission android:name="android.permission.INTERNET"></uses-permission>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name=".GroupActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".SubjectActivity"
+            android:label="@string/title_activity_subject" >
+
+        </activity>
+        <activity
+            android:name=".CourseListActivity"
+            android:label="@string/title_activity_course_list" >
+        </activity>
+        <activity
+            android:name=".CourseLiteInfoActivity"
+            android:label="@string/title_activity_course_lite_info" >
+        </activity>
+        <activity
+            android:name=".AddEvaluationActivity"
+            android:label="@string/title_activity_add_evaluation" >
+        </activity>
+        <activity
+            android:name=".WeightActivity"
+            android:label="@string/title_activity_add_evaluation" >
+        </activity>
+        <activity
+            android:name=".ResultPageActivity"
+            android:label="@string/title_activity_add_evaluation" >
+            </activity>
+        <activity
+            android:name=".CourseEdit"
+            android:label="@string/title_activity_add_evaluation" >
+        </activity>
+    </application>
+
+</manifest>

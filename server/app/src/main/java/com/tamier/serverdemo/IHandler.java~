@@ -1,0 +1,52 @@
+package com.tamier.serverdemo;
+
+import android.app.Activity;
+import android.os.Message;
+
+
+
+import java.lang.ref.WeakReference;
+
+/**
+ * Created by tamier on 28/10/15.
+ */
+//不用有activity!! 不好
+//protected android.os.Handler mHandeler=new android.os.Handler(){
+//    @Override
+//    public void handleMessage(Message msg) {
+//        super.handleMessage(msg);
+//    }
+//};
+//
+//它持有LoginActivity对象，所以可以调用LoginActivity中的实例方法。注释中的系统自带的Handler无法持有LoginActivity，不能调用
+//其方法
+public class IHandler extends android.os.Handler{
+    private WeakReference<Activity> mActivity;
+    public IHandler(LoginActivity activity){
+
+        mActivity=new WeakReference<Activity>(activity);
+    }
+    //override方法的好处是，它一样享有原class中的方法的待遇，环境，条件，结果，数据流控制，但这是我们自由展现我们自己需要的
+    //逻辑事物的方法。
+    @Override
+    public void handleMessage(Message msg){
+
+        //在副线程做的处理
+        int flag=msg.what;
+        switch (flag) {
+            case 0:
+                String errorMsg = (String) msg.getData().getSerializable("ErrorMsg");
+                //回到UI主线程的操作
+                ((LoginActivity) mActivity.get()).showTip(errorMsg);
+                break;
+            case 1:
+                ((LoginActivity) mActivity.get()).showTip(LoginActivity.STRING_LOGIN_SUCCESS);
+                break;
+        }
+        //如果dialog不是空取消dialog
+        if(((LoginActivity) mActivity.get()).mProgressDialog!=null){
+            ((LoginActivity) mActivity.get()).mProgressDialog.dismiss();
+        }
+    }
+
+}

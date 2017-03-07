@@ -1,0 +1,17 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.team.courseselector.SubjectActivity">
+
+    <include
+        android:id="@+id/tb_appbar_course"
+        layout="@layout/toolbar"
+        />
+    <android.support.v7.widget.RecyclerView
+        android:layout_below="@+id/tb_appbar_course"
+        android:id="@+id/rv_courses"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</RelativeLayout>
